@@ -44,8 +44,9 @@ function search(event) {
     let currentWindSpeed = document.querySelector("#wind-speed");
     currentWindSpeed.innerHTML = windSpeed;
 
-    let cityName = document.querySelector("#city-name");
-    cityName.innerHTML = response.data.name;
+    let cityName = response.data.name;
+    let city = document.querySelector("#city-name");
+    city.innerHTML = cityName;
   }
   let apiKey = "5306333b3e62e52ba951ab4ebf05f12e";
   let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&units=metric&appid=${apiKey}`;
