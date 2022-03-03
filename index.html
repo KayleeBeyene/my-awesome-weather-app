@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/99286137ea.js"
       crossorigin="anonymous"
@@ -40,7 +40,18 @@
                 />
               </div>
               <div class="col">
-                <input type="submit" class="btn btn-primary" value="Search" />
+                <input
+                  type="submit"
+                  class="btn btn-primary"
+                  value="Search"
+                  id="search-button"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-success"
+                  value="Current"
+                  id="current-location"
+                />
               </div>
             </div>
           </form>
@@ -53,20 +64,15 @@
             <div class="col-6">
               <h2 id="city-name">Calgary, AB</h2>
               <h3>
-                <span id="current-temperature">19</span>
-                <a href="#" id="celsius-link">°C</a>|<a
-                  href="#"
-                  id="fahrenheit-link"
-                  >°F</a
-                >
+                <span id="current-temperature">°C</span>
               </h3>
-              <h3>Sunny</h3>
+              <h3 id="current-weather">Sunny</h3>
               <h5 id="current-day">Tuesday</h5>
               <h6 id="current-time">22:25</h6>
               <br />
-              <h5>20% Precipitation</h5>
+              <h5>Humidity: <span id="humidity"></span></h5>
 
-              <h5>6km/h Wind</h5>
+              <h5><span id="wind-speed"></span>m/s Wind</h5>
             </div>
           </div>
         </div>
