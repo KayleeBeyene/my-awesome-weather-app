@@ -1,4 +1,3 @@
-//Feature #1 This is the day and time
 let now = new Date();
 let currentDay = document.querySelector("#current-day");
 let currentTime = document.querySelector("#current-time");
@@ -24,12 +23,9 @@ if (minutes < 10) {
 currentDay.innerHTML = days[day];
 currentTime.innerHTML = `${hours}:${minutes}`;
 
-//Feature #2 This is the search engine feature
 function search(event) {
   event.preventDefault();
   let searchCity = document.querySelector("#search-city");
-  let cityName = document.querySelector("#city-name");
-  cityName.innerHTML = searchCity.value;
 
   function showTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
