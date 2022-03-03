@@ -23,35 +23,50 @@ if (minutes < 10) {
 currentDay.innerHTML = days[day];
 currentTime.innerHTML = `${hours}:${minutes}`;
 
+function showTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = `${temperature}°C`;
+
+  let weather = response.data.weather[0].description;
+  let currentWeather = document.querySelector("#current-weather");
+  currentWeather.innerHTML = weather;
+
+  let humidity = response.data.main.humidity;
+  let currentHumidity = document.querySelector("#humidity");
+  currentHumidity.innerHTML = `${humidity}%`;
+
+  let windSpeed = response.data.wind.speed;
+  let currentWindSpeed = document.querySelector("#wind-speed");
+  currentWindSpeed.innerHTML = windSpeed;
+
+  let cityName = response.data.name;
+  let city = document.querySelector("#city-name");
+  city.innerHTML = cityName;
+}
 function search(event) {
   event.preventDefault();
-  let searchCity = document.querySelector("#search-city");
-
-  function showTemperature(response) {
-    let temperature = Math.round(response.data.main.temp);
-    let currentTemperature = document.querySelector("#current-temperature");
-    currentTemperature.innerHTML = `${temperature}°C`;
-
-    let weather = response.data.weather[0].description;
-    let currentWeather = document.querySelector("#current-weather");
-    currentWeather.innerHTML = weather;
-
-    let humidity = response.data.main.humidity;
-    let currentHumidity = document.querySelector("#humidity");
-    currentHumidity.innerHTML = `${humidity}%`;
-
-    let windSpeed = response.data.wind.speed;
-    let currentWindSpeed = document.querySelector("#wind-speed");
-    currentWindSpeed.innerHTML = windSpeed;
-
-    let cityName = response.data.name;
-    let city = document.querySelector("#city-name");
-    city.innerHTML = cityName;
-  }
+  let city = document.querySelector("#search-city").value;
+  searchCity(city);
+}
+function searchCity(city) {
   let apiKey = "5306333b3e62e52ba951ab4ebf05f12e";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&units=metric&appid=${apiKey}`;
-
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
 let searchInput = document.querySelector("#search-form");
 searchInput.addEventListener("submit", search);
+
+function searchLocation(position) {
+  let apiKey = "5306333b3e62e52ba951ab4ebf05f12e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+searchCity("Calgary");
