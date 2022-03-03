@@ -1,0 +1,43 @@
+h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+button {
+  display: inline;
+}
+
+.app-body {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  color: rgb(46, 46, 46);
+  max-width: 100%;
+  border-radius: 20px;
+  padding: 6%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 5px 20px rgb(107, 107, 107);
+}
+.form-control {
+  display: inline;
+}
+
+.main-body {
+  display: block;
+  margin: 0 auto;
+  padding: 5%;
+}
+.current-weather {
+  margin: 50px 50px;
+}
+
+.current-icon {
+  font-size: 200px;
+  text-align: center;
+}
+
+.forecast-icon {
+  font-size: 50px;
+}
+.forecast-cards {
+  margin: 10px 5px 0 5px;
+  padding: 0;
+}
