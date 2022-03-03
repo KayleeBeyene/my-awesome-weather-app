@@ -9,12 +9,15 @@ button {
 .app-body {
   background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   color: rgb(46, 46, 46);
-  max-width: 100%;
+  max-width: 800px;
   border-radius: 20px;
   padding: 6%;
   display: block;
   margin: 0 auto;
   box-shadow: 10px 5px 20px rgb(107, 107, 107);
+}
+.credits {
+  text-align: center;
 }
 .form-control {
   display: inline;
