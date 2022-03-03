@@ -31,7 +31,9 @@ button {
 .current-weather {
   margin: 50px 50px;
 }
-
+.weather-info {
+  text-transform: capitalize;
+}
 .current-icon {
   font-size: 200px;
   text-align: center;
