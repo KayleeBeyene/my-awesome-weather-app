@@ -23,6 +23,18 @@ button {
 .form-control {
   display: inline;
 }
+.degree-units {
+  font-size: 18px;
+  text-decoration: none;
+}
+.active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+.active :hover{
+text-decoration: none;
+}
 
 .main-body {
   display: block;
