@@ -35,7 +35,11 @@ button {
 .active :hover{
 text-decoration: none;
 }
-
+.big-icon {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
 .main-body {
   display: block;
   margin: 0 auto;

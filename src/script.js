@@ -33,7 +33,9 @@ function showTemperature(response) {
   let weather = response.data.weather[0].description;
   let currentWeather = document.querySelector("#current-weather");
   currentWeather.innerHTML = weather;
-
+  
+  let iconElement = document.querySelector("#icon")
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 
   let humidity = response.data.main.humidity;
   let currentHumidity = document.querySelector("#humidity");
