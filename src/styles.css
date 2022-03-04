@@ -32,8 +32,8 @@ button {
   text-decoration: none;
   cursor: default;
 }
-.active :hover{
-text-decoration: none;
+.active :hover {
+  text-decoration: none;
 }
 .big-icon {
   width: 200px;
@@ -55,7 +55,12 @@ text-decoration: none;
   font-size: 200px;
   text-align: center;
 }
-
+.weather-forecast-temperature {
+  text-align: center;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}
 .forecast-icon {
   font-size: 50px;
 }

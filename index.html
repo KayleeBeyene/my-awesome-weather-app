@@ -26,103 +26,116 @@
     <div class="container">
       <h1>Weather App</h1>
       <div class="credits">
-        
-      <div class="app-body">
-        <div class="search-bar">
-          <form id="search-form">
-            <div class="row mb-3">
-              <div class="col sm-7">
-                <input
-                  type="search"
-                  class="form-control"
-                  id="search-city"
-                  placeholder="Search for city here..."
-                  autocomplete="off"
-                  autofocus="on"
-                />
+        <div class="app-body">
+          <div class="search-bar">
+            <form id="search-form">
+              <div class="row mb-3">
+                <div class="col sm-7">
+                  <input
+                    type="search"
+                    class="form-control"
+                    id="search-city"
+                    placeholder="Search for city here..."
+                    autocomplete="off"
+                    autofocus="on"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="submit"
+                    class="btn btn-primary"
+                    value="Search"
+                    id="search-button"
+                  />
+                  <input
+                    type="submit"
+                    class="btn btn-success"
+                    value="Current"
+                    id="current-location-button"
+                  />
+                </div>
               </div>
-              <div class="col">
-                <input
-                  type="submit"
-                  class="btn btn-primary"
-                  value="Search"
-                  id="search-button"
-                />
-                <input
-                  type="submit"
-                  class="btn btn-success"
-                  value="Current"
-                  id="current-location-button"
-                />
+            </form>
+          </div>
+          <div class="current-weather">
+            <div class="row">
+              <div class="col-6">
+                <img src="" alt="" id="icon" class="big-icon" />
+              </div>
+              <div class="col-6">
+                <h2 id="city-name">Calgary, AB</h2>
+                <h3>
+                  <span id="current-temperature"></span>
+                  <span class="degree-units"
+                    ><a href="#" id="celsius" class="active degree-units">°C</a
+                    >|<a href="#" id="fahrenheit" class="degree-units"
+                      >°F</a
+                    ></span
+                  >
+                </h3>
+                <h3 class="weather-info" id="current-weather">Sunny</h3>
+                <h5 lass="weather-info" id="current-day">Tuesday</h5>
+                <h6 lass="weather-info" id="current-time">22:25</h6>
+                <br />
+                <h5 class="weather-info">
+                  Humidity: <span id="humidity"></span>
+                </h5>
+
+                <h5><span id="wind-speed"></span>m/s Wind</h5>
               </div>
             </div>
-          </form>
-        </div>
-        <div class="current-weather">
+          </div>
+
+          <hr />
+
           <div class="row">
-            <div class="col-6">
-              <img src="" alt="" id="icon" class="big-icon">
+            <h5>5 Day Forecast</h5>
+          </div>
+          <div class="row">
+            <div class="card col forecast-cards">
+              <div class="card-body">
+                <h5 class="card-title">Monday</h5>
+                <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="" />
+                <br />
+                <h6
+                  class="card-subtitle mb-2 text-muted weather-forecast-temperature"
+                >
+                  <span class="weather-forecast-temperature-max">22°</span>
+                  <span class="weather-forecast-temperature-min">14°</span>
+                </h6>
+              </div>
             </div>
-            <div class="col-6">
-              <h2 id="city-name">Calgary, AB</h2>
-              <h3><span id="current-temperature"></span>
-               <span class="degree-units"><a href="#" id="celsius" class="active degree-units">°C</a>|<a href="#" id="fahrenheit" class="degree-units">°F</a></span> 
-              </h3> 
-              <h3 class="weather-info" id="current-weather">Sunny</h3>
-              <h5 lass="weather-info" id="current-day">Tuesday</h5>
-              <h6 lass="weather-info" id="current-time">22:25</h6>
-              <br />
-              <h5 class="weather-info">Humidity: <span id="humidity"></span></h5>
-
-              <h5><span id="wind-speed"></span>m/s Wind</h5>
+            <div class="card col forecast-cards">
+              <div class="card-body">
+                <h5 class="card-title">Tuesday</h5>
+                <h6 class="card-subtitle mb-2 text-muted">21°C</h6>
+                <i class="fas fa-cloud-sun forecast-icon"></i>
+              </div>
+            </div>
+            <div class="card col forecast-cards">
+              <div class="card-body">
+                <h5 class="card-title">Wednesday</h5>
+                <h6 class="card-subtitle mb-2 text-muted">22°C</h6>
+                <i class="fas fa-cloud-sun-rain forecast-icon"></i>
+              </div>
+            </div>
+            <div class="card col forecast-cards">
+              <div class="card-body">
+                <h5 class="card-title">Thursday</h5>
+                <h6 class="card-subtitle mb-2 text-muted">23°C</h6>
+                <i class="fas fa-cloud-sun-rain forecast-icon"></i>
+              </div>
+            </div>
+            <div class="card col forecast-cards">
+              <div class="card-body">
+                <h5 class="card-title">Friday</h5>
+                <h6 class="card-subtitle mb-2 text-muted">23°C</h6>
+                <i class="fas fa-cloud-sun-rain forecast-icon"></i>
+              </div>
             </div>
           </div>
         </div>
-
-        <hr />
-
-        <div class="row">
-          <h5>5 Day Forecast</h5>
-        </div>
-        <div class="row">
-          <div class="card col forecast-cards">
-            <div class="card-body">
-              <h5 class="card-title">Monday</h5>
-              <h6 class="card-subtitle mb-2 text-muted">22°C</h6>
-              <i class="fas fa-cloud-sun forecast-icon"></i>
-            </div>
-          </div>
-          <div class="card col forecast-cards">
-            <div class="card-body">
-              <h5 class="card-title">Tuesday</h5>
-              <h6 class="card-subtitle mb-2 text-muted">21°C</h6>
-              <i class="fas fa-cloud-sun forecast-icon"></i>
-            </div>
-          </div>
-          <div class="card col forecast-cards">
-            <div class="card-body">
-              <h5 class="card-title">Wednesday</h5>
-              <h6 class="card-subtitle mb-2 text-muted">22°C</h6>
-              <i class="fas fa-cloud-sun-rain forecast-icon"></i>
-            </div>
-          </div>
-          <div class="card col forecast-cards">
-            <div class="card-body">
-              <h5 class="card-title">Thursday</h5>
-              <h6 class="card-subtitle mb-2 text-muted">23°C</h6>
-              <i class="fas fa-cloud-sun-rain forecast-icon"></i>
-            </div>
-          </div>
-          <div class="card col forecast-cards">
-            <div class="card-body">
-              <h5 class="card-title">Friday</h5>
-              <h6 class="card-subtitle mb-2 text-muted">23°C</h6>
-              <i class="fas fa-cloud-sun-rain forecast-icon"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="https://github.com/KayleeBeyene/week6" target="_blank"
+        <a href="https://github.com/KayleeBeyene/week6" target="_blank"
           >Open-source code </a
         >by Kaylee Beyene
       </div>
