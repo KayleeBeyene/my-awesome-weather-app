@@ -55,6 +55,9 @@ button {
   font-size: 200px;
   text-align: center;
 }
+.weather-forecast {
+  margin: 0 auto;
+}
 .weather-forecast-temperature {
   text-align: center;
 }
