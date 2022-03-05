@@ -62,7 +62,8 @@ button {
   opacity: 0.6;
 }
 .forecast-icon {
-  font-size: 50px;
+  max-width: 100px;
+  margin: 0 auto;
 }
 .forecast-cards {
   margin: 10px 5px 0 5px;

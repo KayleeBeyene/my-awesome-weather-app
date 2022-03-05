@@ -23,19 +23,20 @@ if (minutes < 10) {
 currentDay.innerHTML = days[day];
 currentTime.innerHTML = `${hours}:${minutes}`;
 
-
-
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = `${temperature}`;
-  celsiusTemperature = response.data.main.temp
+  celsiusTemperature = response.data.main.temp;
   let weather = response.data.weather[0].description;
   let currentWeather = document.querySelector("#current-weather");
   currentWeather.innerHTML = weather;
-  
-  let iconElement = document.querySelector("#icon")
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   let humidity = response.data.main.humidity;
   let currentHumidity = document.querySelector("#humidity");
@@ -71,21 +72,21 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 function showCelsiusTemperature(event) {
-  event.preventDefault()
-  let temperatureElement = document.querySelector("#current-temperature")
-temperatureElement.innerHTML = Math.round(celsiusTemperature)
-celsiusLink.classList.add("active")
-fahrenheitLink.classList.remove("active")
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 function showFahrenheitTemperature(event) {
-event.preventDefault()
-let fahrenheitTemperature = (celsiusTemperature * 9)/ 5 + 32 
-let temperatureElement = document.querySelector("#current-temperature")
-celsiusLink.classList.remove("active")
-fahrenheitLink.classList.add("active")
-temperatureElement.innerHTML = Math.round(fahrenheitTemperature)
-console.log(celsiusTemperature)
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  console.log(celsiusTemperature);
 }
 let celsiusTemperature = null;
 
@@ -95,11 +96,10 @@ searchInput.addEventListener("submit", search);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-let fahrenheitLink = document.querySelector("#fahrenheit")
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature)
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
-
-let celsiusLink = document.querySelector("#celsius")
-celsiusLink.addEventListener("click", showCelsiusTemperature)
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Calgary");
